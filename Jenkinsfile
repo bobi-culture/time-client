@@ -11,7 +11,7 @@ pipeline{
 
 		stage('Build') {
 			steps {
-				sh 'docker build -t time-client:latest .'
+				sh 'docker build -t achilles1024/time-client:latest .'
 			}
 		}
 
