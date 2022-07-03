@@ -6,7 +6,7 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-EXPOSE 9000
+EXPOSE 5000
 ENV FLASK_APP=app
 ENV FLASK_RUN_HOST=0.0.0.0
 
