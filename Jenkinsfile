@@ -30,7 +30,7 @@ pipeline{
 		}
 		stage('Clean') {
          steps{
-           sh "docker rmi ${IMAGE_ID}"
+           sh "sudo docker rmi ${IMAGE_ID}"
          }
        }
 
