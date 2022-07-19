@@ -25,7 +25,7 @@ pipeline{
 
 		stage('Push') {
 			steps {
-				sh "docker push ${IMAGE_ID}"
+				sh "sudo docker push ${IMAGE_ID}"
 			}
 		}
 		stage('Clean') {
