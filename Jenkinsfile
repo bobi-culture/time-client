@@ -13,7 +13,7 @@ pipeline{
 
 		stage('Build') {
 			steps {
-				sh "docker build -t ${IMAGE_ID} ."
+				sh "sudo docker build -t ${IMAGE_ID} ."
 			}
 		}
 
