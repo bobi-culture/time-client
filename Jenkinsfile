@@ -13,24 +13,24 @@ pipeline{
 
 		stage('Build') {
 			steps {
-				sh "sudo docker build -t ${IMAGE_ID} ."
+				sh "docker build -t ${IMAGE_ID} ."
 			}
 		}
 
 		stage('Login') {
 			steps {
-				sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | sudo docker login -u ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
+				sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login -u ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
 			}
 		}
 
 		stage('Push') {
 			steps {
-				sh "sudo docker push ${IMAGE_ID}"
+				sh "docker push ${IMAGE_ID}"
 			}
 		}
 		stage('Clean') {
          steps{
-           sh "sudo docker rmi ${IMAGE_ID}"
+           sh "docker rmi ${IMAGE_ID}"
          }
        }
 
@@ -38,7 +38,7 @@ pipeline{
 
 	post {
 		always {
-			sh "sudo docker logout"
+			sh "docker logout"
 		}
 	}
 
